@@ -50,7 +50,7 @@ def with_describe(
         if not value:
             return
         schema = describe(cli, options)
-        click.echo(json.dumps(to_dict(schema), indent=2))
+        click.echo(json.dumps(to_dict(schema), separators=(",", ":")))
         ctx.exit(0)
 
     if isinstance(cli, click.Command):
